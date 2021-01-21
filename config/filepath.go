@@ -6,7 +6,7 @@ import (
 )
 
 const (
-	ConfigFile = "config.toml"
+	DefaultConfigFile = "config.toml"
 )
 func GetConfigFile() string {
 	conf_file_path := flag.String("config", "./config.toml", "path to config file")
@@ -14,7 +14,7 @@ func GetConfigFile() string {
 	var ConfigFilePath = *conf_file_path
 	var cf_file string
 	if ConfigFilePath == "" {
-		cf_file = process.GetRunPath() + "/" + ConfigFile
+		cf_file = process.GetRunPath() + "/" + DefaultConfigFile
 	} else {
 		cf_file = ConfigFilePath
 	}
